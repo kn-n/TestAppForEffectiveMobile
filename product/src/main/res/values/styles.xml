@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="CustomRatingBar" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/ratingbar_style</item>
+        <item name="android:minHeight">@dimen/dimen_21dp</item>
+        <item name="android:maxHeight">@dimen/dimen_21dp</item>
+    </style>
+
+    <declare-styleable name="ColorWidget">
+        <attr name="productColor" format="string"/>
+        <attr name="isChecked" format="boolean"/>
+    </declare-styleable>
+
+    <style name="bold_03.size_13sp">
+        <item name="android:textSize">@dimen/text_size_13sp</item>
+        <item name="android:fontFamily">@font/mark_pro_bold</item>
+    </style>
+</resources>

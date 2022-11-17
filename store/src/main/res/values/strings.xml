@@ -1,0 +1,53 @@
+<resources>
+    //Titles
+    <string name="title_select_category">Select Category</string>
+    <string name="title_hot_sales">Hot sales</string>
+    <string name="title_best_seller">Best Seller</string>
+    <string name="title_product_details">Product Details</string>
+    <string name="title_my_cart">My Cart</string>
+
+    <string name="view_all">view all</string>
+    <string name="see_more">see more</string>
+
+    //Categories
+    <string name="phones">Phones</string>
+    <string name="computer">Computer</string>
+    <string name="health">Health</string>
+    <string name="books">Books</string>
+
+    <string name="marker_new">New</string>
+    <string name="buy_now">Buy now!</string>
+
+    <string name="search">Search</string>
+
+    //Filter
+    <string name="filter_options">Filter options</string>
+    <string name="filter_item_brand">Brand</string>
+    <string name="filter_item_price">Price</string>
+    <string name="filter_item_size">Size</string>
+    <string name="done">Done</string>
+
+    <string name="select">Select</string>
+
+    <string name="no_filter">No filter</string>
+
+    //Brands
+    <string-array name="brands">
+        <item>No filter</item>
+        <item>Samsung</item>
+        <item>Xiaomi</item>
+        <item>Motorola</item>
+    </string-array>
+
+    //Sizes
+    <string-array name="sizes">
+        <item>No filter</item>
+        <item>4.5 to 5.5 inches</item>
+    </string-array>
+
+    //Prices
+    <string-array name="prices">
+        <item>No filter</item>
+        <item>0$ - 10,000$</item>
+    </string-array>
+</resources>

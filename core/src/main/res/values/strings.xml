@@ -1,0 +1,4 @@
+<resources>
+    <string name="empty_message">Oh… it\'s empty :(</string>
+    <string name="error_message">It seems that something went wrong</string>
+</resources>

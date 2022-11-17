@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottomSheet"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clipToPadding="false"
+    android:background="@android:color/transparent"
+    app:behavior_hideable="true"
+    app:behavior_peekHeight="0dp"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_white_radius_30dp"
+        android:elevation="@dimen/dimen_20dp"
+        android:orientation="vertical"
+        android:clipToPadding="false"
+        android:outlineSpotShadowColor="@color/dark_blue"
+        android:paddingHorizontal="@dimen/dimen_20dp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_24dp">
+
+            <ImageButton
+                android:id="@+id/close_filter"
+                android:layout_width="@dimen/size_37dp"
+                android:layout_height="@dimen/size_37dp"
+                android:layout_gravity="start"
+                android:background="@drawable/bg_white_radius_10dp"
+                android:backgroundTint="@color/dark_blue"
+                android:src="@drawable/ic_close_24dp"
+                app:tint="@color/white" />
+
+            <TextView
+                style="@style/medium_02.blue_size_18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/filter_options" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/add_filter"
+                style="@style/medium_02.white_size_18"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/size_37dp"
+                android:layout_gravity="end"
+                android:background="@drawable/bg_white_radius_10dp"
+                android:backgroundTint="@color/orange"
+                android:gravity="center"
+                android:text="@string/done"
+                android:textAllCaps="false" />
+        </FrameLayout>
+
+        <TextView
+            style="@style/medium_02.blue_size_18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_35dp"
+            android:text="@string/filter_item_brand" />
+
+        <Spinner
+            android:id="@+id/brand_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_37dp"
+            android:layout_marginTop="@dimen/dimen_10dp"
+            android:background="@drawable/bg_filter_5dp"
+            android:popupBackground="@drawable/bg_filter_fill_5dp"
+            android:spinnerMode="dropdown"
+            tools:listitem="@layout/item_filter"/>
+
+        <TextView
+            style="@style/medium_02.blue_size_18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_10dp"
+            android:text="@string/filter_item_price" />
+
+        <Spinner
+            android:id="@+id/price_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_37dp"
+            android:layout_marginTop="@dimen/dimen_10dp"
+            android:background="@drawable/bg_filter_5dp"
+            android:popupBackground="@drawable/bg_filter_fill_5dp"
+            android:spinnerMode="dropdown"
+            tools:listitem="@layout/item_filter"/>
+
+        <TextView
+            style="@style/medium_02.blue_size_18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_10dp"
+            android:text="@string/filter_item_size" />
+
+        <Spinner
+            android:id="@+id/size_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_37dp"
+            android:layout_marginTop="@dimen/dimen_10dp"
+            android:layout_marginBottom="@dimen/dimen_35dp"
+            android:background="@drawable/bg_filter_5dp"
+            android:popupBackground="@drawable/bg_filter_fill_5dp"
+            android:spinnerMode="dropdown"
+            tools:listitem="@layout/item_filter"/>
+
+    </LinearLayout>
+
+</FrameLayout>

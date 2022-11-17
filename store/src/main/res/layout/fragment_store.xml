@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/gray_1"
+        android:clipToPadding="false"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_5dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+
+                <ImageView
+                    android:layout_width="@dimen/size_18dp"
+                    android:layout_height="@dimen/size_18dp"
+                    android:src="@drawable/ic_location_24dp"
+                    app:tint="@color/orange" />
+
+                <TextView
+                    style="@style/medium_02.blue_size_15sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dimen_5dp"
+                    android:text="Zihuatanejo, Gro" />
+
+                <ImageView
+                    android:layout_width="@dimen/size_18dp"
+                    android:layout_height="@dimen/size_18dp"
+                    android:paddingTop="@dimen/dimen_5dp"
+                    android:src="@drawable/ic_arrow_down_24dp"
+                    app:tint="@color/gray_2" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/filter"
+                android:layout_width="@dimen/size_18dp"
+                android:layout_height="@dimen/size_18dp"
+                android:layout_gravity="center_vertical|end"
+                android:layout_marginEnd="@dimen/dimen_27dp"
+                android:src="@drawable/ic_funnel_24dp"
+                app:tint="@color/dark_blue" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_17dp"
+            android:layout_marginTop="@dimen/dimen_18dp"
+            android:layout_marginEnd="@dimen/dimen_27dp">
+
+            <TextView
+                style="@style/bold_01.size_25sp.blue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:text="@string/title_select_category"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/view_all"
+                style="@style/light_02.orange_size_15sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|center_vertical"
+                android:text="@string/view_all" />
+
+        </FrameLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/category_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_113dp"
+            android:layout_marginTop="@dimen/dimen_4dp"
+            android:clipToPadding="false"
+            android:paddingStart="@dimen/dimen_7dp"
+            tools:ignore="RtlSymmetry"
+            tools:listitem="@layout/category_widget" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/dimen_32dp"
+            android:paddingTop="@dimen/dimen_25dp"
+            android:paddingBottom="@dimen/dimen_24dp">
+
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/search"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/size_34dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_white_radius_50dp"
+                android:elevation="@dimen/dimen_20dp"
+                android:outlineSpotShadowColor="@color/gray_2"
+                android:paddingVertical="@dimen/dimen_7dp"
+                android:theme="@style/regular_03.blue_size_14sp"
+                app:defaultQueryHint="@string/search"
+                app:iconifiedByDefault="false"
+                app:queryBackground="@null"
+                app:searchHintIcon="@null"
+                app:searchIcon="@drawable/ic_search_24" />
+
+            <ImageView
+                android:layout_width="@dimen/size_34dp"
+                android:layout_height="@dimen/size_34dp"
+                android:layout_marginStart="@dimen/dimen_10dp"
+                android:background="@drawable/circle_orange"
+                android:padding="@dimen/dimen_5dp"
+                android:src="@drawable/ic_filter_24dp"
+                app:tint="@color/white" />
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/gray_1"
+            android:clipToPadding="false"
+            android:clipChildren="false"
+            android:layout_marginBottom="67dp" />
+
+    </LinearLayout>
+
+    <include
+        android:id="@+id/tap_bar"
+        layout="@layout/tap_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_72dp"
+        android:layout_gravity="bottom"/>
+
+</FrameLayout>

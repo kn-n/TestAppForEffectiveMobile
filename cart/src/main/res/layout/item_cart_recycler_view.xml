@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_marginBottom="@dimen/dimen_35dp"
+    android:background="@color/dark_blue">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="@dimen/size_88dp"
+        android:layout_height="@dimen/size_88dp"
+        app:cardCornerRadius="@dimen/dimen_10dp">
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_weight="1"
+            android:id="@+id/product_name"
+            style="@style/regular_02.white_size_20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_15dp"
+            android:lines="2"
+            tools:text="Galaxy Note 20 Ultra"/>
+
+        <TextView
+            android:id="@+id/price"
+            style="@style/regular_02.orange_size_20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_15dp"
+            android:layout_marginBottom="@dimen/dimen_5dp"
+            tools:text="$3000.00"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="@dimen/size_26dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/bg_white_radius_50dp"
+        android:backgroundTint="@color/dark_gray_blue"
+        android:paddingVertical="@dimen/dimen_5dp"
+        android:layout_marginStart="@dimen/dimen_30dp"
+        android:layout_marginVertical="@dimen/dimen_12dp">
+
+        <ImageView
+            android:id="@+id/minus_count"
+            android:layout_width="@dimen/size_15dp"
+            android:layout_height="@dimen/size_15dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/ic_minus_24"
+            app:tint="@color/white" />
+
+        <TextView
+            android:id="@+id/count"
+            android:layout_weight="1"
+            style="@style/regular_02.white_size_16sp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:paddingBottom="@dimen/dimen_5dp"
+            tools:text="2"/>
+
+        <ImageView
+            android:id="@+id/plus_count"
+            android:layout_width="@dimen/size_15dp"
+            android:layout_height="@dimen/size_15dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/ic_pluse_24"
+            app:tint="@color/white" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="@dimen/size_25dp"
+        android:layout_height="@dimen/size_25dp"
+        android:src="@drawable/ic_trash_24dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="@dimen/dimen_17dp"
+        app:tint="@color/dark_gray_blue" />
+
+
+</LinearLayout>

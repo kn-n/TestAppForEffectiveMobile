@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_1"
+    android:clipToPadding="false"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_30dp"
+        android:layout_marginTop="@dimen/dimen_20dp"
+        android:layout_marginEnd="@dimen/size_25dp"
+        android:clipToPadding="false">
+
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="@dimen/size_37dp"
+            android:layout_height="@dimen/size_37dp"
+            android:layout_gravity="start"
+            android:background="@drawable/bg_white_radius_10dp"
+            android:backgroundTint="@color/dark_blue"
+            android:src="@drawable/ic_arrow_left_24dp"
+            app:tint="@color/white" />
+
+        <TextView
+            style="@style/medium_02.blue_size_18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/product_details" />
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end">
+
+            <ImageButton
+                android:id="@+id/cart"
+                android:layout_width="@dimen/size_37dp"
+                android:layout_height="@dimen/size_37dp"
+                android:layout_gravity="end"
+                android:layout_marginEnd="@dimen/dimen_5dp"
+                android:background="@drawable/bg_white_radius_10dp"
+                android:backgroundTint="@color/orange"
+                android:src="@drawable/ic_cart_24dp"
+                app:tint="@color/white" />
+
+            <TextView
+                android:id="@+id/badge"
+                style="@style/regular_02.white_size_9sp"
+                android:layout_width="@dimen/dimen_15dp"
+                android:layout_height="@dimen/dimen_15dp"
+                android:layout_gravity="end"
+                android:background="@drawable/circle_white"
+                android:backgroundTint="@color/dark_blue"
+                android:gravity="center"
+                android:paddingBottom="@dimen/dimen_2dp"
+                android:visibility="gone"
+                tools:visibility="visible"
+                tools:text="2" />
+
+        </FrameLayout>
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/product_view_pager"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:paddingHorizontal="@dimen/dimen_30dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_white_radius_30dp"
+                android:clipToPadding="false"
+                android:elevation="@dimen/dimen_20dp"
+                android:orientation="vertical"
+                android:outlineSpotShadowColor="@color/dark_blue"
+                android:paddingHorizontal="@dimen/dimen_30dp">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_27dp">
+
+                    <TextView
+                        android:id="@+id/product_name"
+                        style="@style/medium_01.blue_size_24sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start|center_vertical"
+                        tools:text="Galaxy Note 20 Ultra" />
+
+                    <CheckBox
+                        android:id="@+id/btn_favorite"
+                        android:layout_width="@dimen/size_37dp"
+                        android:layout_height="@dimen/size_37dp"
+                        android:layout_gravity="end"
+                        android:background="@drawable/bg_white_radius_10dp"
+                        android:backgroundTint="@color/dark_blue"
+                        android:button="@drawable/favorite_selector"
+                        android:buttonTint="@color/white" />
+
+                </FrameLayout>
+
+                <androidx.appcompat.widget.AppCompatRatingBar
+                    android:id="@+id/rating_bar"
+                    style="@style/CustomRatingBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:isIndicator="true"
+                    android:numStars="5"
+                    android:stepSize="0.5" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/dimen_20dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.tabs.TabLayout
+                        android:id="@+id/tab_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:tabIndicatorColor="@color/orange"
+                        app:tabIndicatorHeight="@dimen/size_3dp"
+                        app:tabMode="fixed"
+                        app:tabSelectedTextColor="@color/dark_blue"
+                        app:tabTextAppearance="@style/medium_02.gray_3_size_20sp" />
+
+                    <androidx.viewpager2.widget.ViewPager2
+                        android:id="@+id/product_details_view_pager"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="@dimen/dimen_20dp"
+                        android:layout_weight="1" />
+
+                </LinearLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_20dp"
+                    android:layout_marginBottom="@dimen/dimen_35dp"
+                    android:background="@drawable/bg_white_radius_10dp"
+                    android:backgroundTint="@color/orange">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/add_to_cart"
+                        style="@style/bold_02.white_size_20sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/size_54dp"
+                        android:background="@android:color/transparent"
+                        android:gravity="center_vertical"
+                        android:paddingHorizontal="@dimen/dimen_44dp"
+                        android:text="@string/add_to_cart"
+                        android:textAllCaps="false" />
+
+                    <TextView
+                        android:id="@+id/price"
+                        style="@style/bold_02.white_size_20sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|end"
+                        android:layout_marginEnd="@dimen/dimen_44dp"
+                        tools:text="$1,500" />
+                </FrameLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <include
+            android:id="@+id/status_layout"
+            layout="@layout/item_status_message"
+            android:visibility="gone"/>
+    </FrameLayout>
+</LinearLayout>

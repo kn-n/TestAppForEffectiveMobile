@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="@dimen/size_32dp"
+                android:layout_height="@dimen/size_32dp"
+                android:src="@drawable/ic_proc_24dp"
+                android:layout_gravity="center_horizontal"
+                app:tint="@color/gray_4" />
+            <TextView
+                android:id="@+id/cpu"
+                style="@style/regular_gray_4_size_11sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_5dp"
+                android:gravity="center"
+                android:layout_gravity="center_horizontal"
+                tools:text="Exynos 990"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_30dp"
+            android:layout_marginEnd="@dimen/dimen_15dp"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="@dimen/size_32dp"
+                android:layout_height="@dimen/size_32dp"
+                android:src="@drawable/ic_camera_24dp"
+                android:layout_gravity="center_horizontal"
+                app:tint="@color/gray_4" />
+            <TextView
+                android:id="@+id/camera"
+                style="@style/regular_gray_4_size_11sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_5dp"
+                android:gravity="center"
+                android:layout_gravity="center_horizontal"
+                tools:text="108 + 12 mp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_15dp"
+            android:layout_marginEnd="@dimen/dimen_30dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="@dimen/size_32dp"
+                android:layout_height="@dimen/size_32dp"
+                android:src="@drawable/ic_ssd_24dp"
+                android:layout_gravity="center_horizontal"
+                app:tint="@color/gray_4" />
+            <TextView
+                android:id="@+id/ssd"
+                style="@style/regular_gray_4_size_11sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_5dp"
+                android:gravity="center"
+                android:layout_gravity="center_horizontal"
+                tools:text="8 GB"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="@dimen/size_32dp"
+                android:layout_height="@dimen/size_32dp"
+                android:src="@drawable/ic_memory_24dp"
+                android:layout_gravity="center_horizontal"
+                app:tint="@color/gray_4" />
+            <TextView
+                android:id="@+id/sd"
+                style="@style/regular_gray_4_size_11sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_5dp"
+                android:gravity="center"
+                android:layout_gravity="center_horizontal"
+                tools:text="256 GB"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        style="@style/medium_02.blue_size_16sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_20dp"
+        android:text="@string/select_color_and_capacity"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_40dp"
+        android:layout_marginTop="@dimen/dimen_15dp"
+        android:orientation="horizontal">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/colors_recycler_view"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dimen_5dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:orientation="horizontal"
+            tools:listitem="@layout/item_colors_recycler_view"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/memory_recycler_view"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="@dimen/dimen_5dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:orientation="horizontal"
+            tools:listitem="@layout/item_memory_recycler_view"/>
+
+    </LinearLayout>
+
+</LinearLayout>

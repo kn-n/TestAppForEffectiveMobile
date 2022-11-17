@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_1"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dimen_30dp"
+        android:layout_marginTop="@dimen/dimen_20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="@dimen/size_37dp"
+            android:layout_height="@dimen/size_37dp"
+            android:layout_gravity="start"
+            android:background="@drawable/bg_white_radius_10dp"
+            android:backgroundTint="@color/dark_blue"
+            android:src="@drawable/ic_arrow_left_24dp"
+            app:tint="@color/white" />
+
+        <TextView
+            android:id="@+id/location"
+            style="@style/medium_02.blue_size_15sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|end"
+            android:layout_marginEnd="@dimen/dimen_44dp"
+            android:text="@string/add_address" />
+
+        <ImageButton
+            android:id="@+id/btn_add_location"
+            android:layout_width="@dimen/size_37dp"
+            android:layout_height="@dimen/size_37dp"
+            android:layout_gravity="end"
+            android:background="@drawable/bg_white_radius_10dp"
+            android:backgroundTint="@color/orange"
+            android:src="@drawable/ic_location_24dp"
+            app:tint="@color/white" />
+    </FrameLayout>
+
+    <TextView
+        style="@style/bold_01.blue_size_35sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dimen_30dp"
+        android:layout_marginVertical="@dimen/dimen_50dp"
+        android:text="@string/my_cart" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_white_radius_30dp"
+        android:backgroundTint="@color/dark_blue"
+        android:outlineSpotShadowColor="@color/dark_blue"
+        android:elevation="@dimen/dimen_20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/cart_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dimen_30dp"
+                android:layout_marginTop="@dimen/dimen_20dp"
+                android:layout_weight="1"
+                android:paddingTop="@dimen/dimen_50dp"
+                tools:listitem="@layout/item_cart_recycler_view" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_3dp"
+                android:layout_marginHorizontal="@dimen/dimen_5dp"
+                android:layout_marginTop="@dimen/dimen_20dp"
+                android:src="@drawable/line_2dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dimen_30dp"
+                android:layout_marginTop="@dimen/dimen_15dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/light_02.white_size_15sp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/total" />
+
+                <TextView
+                    android:id="@+id/total_amount"
+                    style="@style/bold_02.white_size_15sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="$6,000 us" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dimen_30dp"
+                android:layout_marginTop="@dimen/dimen_12dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/light_02.white_size_15sp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/delivery" />
+
+                <TextView
+                    android:id="@+id/delivery_cost"
+                    style="@style/bold_02.white_size_15sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Free" />
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_3dp"
+                android:layout_marginHorizontal="@dimen/dimen_5dp"
+                android:layout_marginTop="@dimen/dimen_15dp"
+                android:src="@drawable/line_1dp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/checkout"
+                style="@style/bold_02.white_size_20sp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_54dp"
+                android:layout_marginTop="@dimen/dimen_27dp"
+                android:layout_marginBottom="@dimen/dimen_44dp"
+                android:layout_marginHorizontal="@dimen/dimen_30dp"
+                android:background="@drawable/bg_white_radius_10dp"
+                android:backgroundTint="@color/orange"
+                android:textAllCaps="false"
+                android:text="@string/checkout"
+                android:gravity="center"/>
+        </LinearLayout>
+
+        <include
+            android:id="@+id/status_layout"
+            layout="@layout/item_status_message"
+            android:visibility="visible" />
+
+    </FrameLayout>
+
+</LinearLayout>
