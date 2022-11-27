@@ -15,6 +15,7 @@ import ru.kn_n.store.R
 import ru.kn_n.store.databinding.FragmentStoreBinding
 import ru.kn_n.store.presentation.adapter.CategoriesAdapter
 import ru.kn_n.store.presentation.adapter.MainStoreAdapter
+import ru.kn_n.store.presentation.model.CategoryCache
 import ru.kn_n.store.presentation.model.DisplayableItem
 import ru.kn_n.store.presentation.model.FilterDialogScreenArgs
 import ru.kn_n.store.presentation.model.Message
@@ -26,6 +27,9 @@ class StoreFragment : BaseFragment<FragmentStoreBinding>(FragmentStoreBinding::i
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
     private val viewModel: StoreViewModel by viewModels { viewModelFactory }
+
+    @Inject
+    lateinit var cache: CategoryCache
 
     private val mainAdapter by lazy {
         MainStoreAdapter(
@@ -40,8 +44,6 @@ class StoreFragment : BaseFragment<FragmentStoreBinding>(FragmentStoreBinding::i
         }
     }
 
-    private var lastCategory = String.EMPTY
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -49,8 +51,7 @@ class StoreFragment : BaseFragment<FragmentStoreBinding>(FragmentStoreBinding::i
         showCategories()
         showTapBar()
 
-        lastCategory = requireContext().getString(R.string.phones)
-        getProductsCategory(lastCategory)
+        getProductsCategory(cache.lastCategory)
         getCartItemCount()
 
         initFilter()
@@ -63,7 +64,7 @@ class StoreFragment : BaseFragment<FragmentStoreBinding>(FragmentStoreBinding::i
 
     private fun initFilter() {
         binding.filter.setOnClickListener {
-            if (lastCategory == requireContext().getString(R.string.phones)) {
+            if (cache.lastCategory == requireContext().getString(R.string.phones)) {
                 FilterDialogFragment.newInstance(
                     FilterDialogScreenArgs(
                         onDoneClick = ::getFilterProducts
@@ -111,7 +112,7 @@ class StoreFragment : BaseFragment<FragmentStoreBinding>(FragmentStoreBinding::i
 
     private fun getFilterProducts(brand: String, price: String) {
         viewModel.getProductsWithFilter(
-            category = lastCategory,
+            category = cache.lastCategory,
             brand = brand,
             price = price
         )
@@ -164,7 +165,7 @@ class StoreFragment : BaseFragment<FragmentStoreBinding>(FragmentStoreBinding::i
 
     private fun onCategoryClick(category: String) {
         getProductsCategory(category)
-        lastCategory = category
+        cache.lastCategory = category
     }
 
     private fun onProductClick() {
@@ -172,7 +173,7 @@ class StoreFragment : BaseFragment<FragmentStoreBinding>(FragmentStoreBinding::i
     }
 
     private fun onRefreshClick() {
-        getProductsCategory(lastCategory)
+        getProductsCategory(cache.lastCategory)
     }
 
     private fun showLoading() {
